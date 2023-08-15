@@ -16,4 +16,4 @@ def slice_me(family: list, start: int, end: int) -> list:
     print(f"My shape is: {np.array(family).shape}")
     ret_list = np.array(family[start:end])
     print(f"New shape is: {ret_list.shape}")
-    return ret_list
+    return list(ret_list)
