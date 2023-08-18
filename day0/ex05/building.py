@@ -19,7 +19,7 @@ def letter_counter(line: str) -> dict:
             d["spaces"] += 1
         elif letter.isdigit():
             d["digits"] += 1
-        elif letter in string.punctuation or letter == "\n":
+        elif letter in string.punctuation:
             d["punctuation marks"] += 1
     return d
 
@@ -28,7 +28,8 @@ def main(argv):
     try:
         assert len(argv) <= 2, "more than one argument is provided"
         if len(argv) == 1:
-            line = input("What is the text to count?\n")
+            line = input("So what do I have to count, ara")
+            line += "\n"
         else:
             line = argv[1]
         d = letter_counter(line)
