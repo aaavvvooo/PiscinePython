@@ -28,10 +28,11 @@ def main(argv):
     try:
         assert len(argv) <= 2, "more than one argument is provided"
         if len(argv) == 1:
-            line = input("So what do I have to count, ara")
+            line = input("So what do I have to count, ara\n")
             line += "\n"
         else:
             line = argv[1]
+        print(f"==={line}===")
         d = letter_counter(line)
         print(f"The string contains {len(line)} characters:")
         for elem in d:
