@@ -32,7 +32,6 @@ def main(argv):
             line += "\n"
         else:
             line = argv[1]
-        print(f"==={line}===")
         d = letter_counter(line)
         print(f"The string contains {len(line)} characters:")
         for elem in d:

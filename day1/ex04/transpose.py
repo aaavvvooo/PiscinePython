@@ -29,7 +29,7 @@ def transpose(path: str) -> list[int]:
             ints.append(list(map(lambda x: int(x), image[i])))
         ints = np.array(ints)
         print(ints)
-        transposed = image.transpose(1, 0)
+        transposed = ints.transpose(1, 0)
         print(f"New shape after Transpose: {transposed.shape}")
         return transposed
     except Exception as e:
@@ -37,12 +37,8 @@ def transpose(path: str) -> list[int]:
 
 
 def main():
-    ints = []
     arr = transpose("animal.jpeg")
-    for i in range(len(arr)):
-        ints.append(list(map(lambda x: int(x), arr[i])))
-    ints = np.array(ints)
-    print(ints)
+    print(arr)
     plt.imshow(arr, cmap="gray")
     plt.show()
 
