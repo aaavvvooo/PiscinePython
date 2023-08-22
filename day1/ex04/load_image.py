@@ -11,8 +11,7 @@ def ft_load(path: str) -> list[int]:
     try:
         image = Image.open(path)
         rgb_array = np.array(image)
-        print(f"The shape of image is: {rgb_array.shape}")
         return rgb_array
     except Exception as e:
-        print(f"Error: {e}")
-        return None
+        print(f"Error3: {e}")
+        exit(1)
