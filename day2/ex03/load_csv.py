@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 
 def load(path: str) -> list:
@@ -9,7 +8,5 @@ def load(path: str) -> list:
     """
     if (not isinstance(path, str)):
         raise TypeError("path must be a string")
-    if not os.path.exists(path):
-        raise FileNotFoundError("path does not exist")
     dataset = pd.read_csv(path)
     return dataset
