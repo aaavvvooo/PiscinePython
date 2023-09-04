@@ -1,5 +1,4 @@
-import csv
-import numpy as np
+import pandas as pd
 import os
 
 
@@ -12,6 +11,5 @@ def load(path: str) -> list:
         raise TypeError("path must be a string")
     if not os.path.exists(path):
         raise FileNotFoundError("path does not exist")
-    with open(path, 'r') as f:
-        reader = csv.reader(f)
-        return np.array([row for row in reader])
+    dataset = pd.read_csv(path)
+    return dataset
