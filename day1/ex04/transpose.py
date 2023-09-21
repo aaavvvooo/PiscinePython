@@ -3,6 +3,11 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
+def my_transpose(lst: list[int]):
+    """Transposes a matrix of ints"""
+    return [[lst[j][i] for j in range(len(lst))] for i in range(len(lst[0]))]
+
+
 def zoom(path: str) -> list[int]:
     """
     Takes a path to image and zooms it
@@ -29,7 +34,7 @@ def transpose(path: str) -> list[int]:
             ints.append(list(map(lambda x: int(x), image[i])))
         ints = np.array(ints)
         print(ints)
-        transposed = ints.transpose(1, 0)
+        transposed = np.array(my_transpose(ints))
         print(f"New shape after Transpose: {transposed.shape}")
         return transposed
     except Exception as e:
