@@ -6,14 +6,21 @@ class King(Baratheon, Lannister):
     def __init__(self, first_name: str, is_alive=True) -> None:
         """Constructor"""
         Baratheon.__init__(self, first_name, is_alive)
+        
+    @property
+    def hairs(self):
+        print("barev")
+        return self.hair
+
 
     def set_eyes(self, eyes: str) -> None:
         """Set the eyes color of the King"""
         self.eyes = eyes
 
-    def set_hairs(self, hair: str) -> None:
+    @hairs.setter
+    def hairs(self, hair: str) -> None:
         """Set the hair color of the King"""
-        self.hair = hair
+        self._hair = hair
 
     def get_eyes(self) -> str:
         """Return the eyes color of the King"""

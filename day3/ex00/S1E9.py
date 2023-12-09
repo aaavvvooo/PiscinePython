@@ -20,7 +20,7 @@ class Character(ABC):
 
 class Stark(Character):
     """Class representing the Stark family. Inherits from Character."""
-    def __init__(self, first_name, is_alive=True) -> None:
+    def __init__(self, first_name: str, is_alive: bool =True) -> None:
         """Constructor
 Args:
 first_name(str): first name of the character
